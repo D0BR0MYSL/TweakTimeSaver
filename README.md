@@ -17,7 +17,7 @@ TweakTimeSaver has a seamlessly integrated mechanism for deployment of additiona
 ## Using
 
 ```
-Placeholder: please wait for a video or animated gif here.
+Please wait for a video or animated gif here.
 ```
 
 ## Requirements/Target
