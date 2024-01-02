@@ -4,9 +4,9 @@
 
 ## Purpose
 
-- Bulk adjusting of basic Windows settings.
-- Save time aftrer installing/resetting Windows.
-- Made to be useful without showing off in manner of "revolutionary best tweaks and bells".
+- Bulk adjusting of basic Windows settings
+- Save time aftrer installing/resetting Windows
+- Made to be useful without showing off in manner of "revolutionary best tweaks and bells"
 
 ## Description
 
