@@ -16,9 +16,9 @@ TweakTimeSaver has a seamlessly integrated mechanism for deployment of additiona
 
 ## How to download and deploy
 
-If you are not familiar with Github yet, just hit the green "Code" button at the top right corner of this page and choose "Download ZIP" option.
+If you are not familiar with Github yet, just hit the green "Code" button at the top right corner of this page and choose "Download ZIP" option. Then unpack downloaded .zip archive and run "start" script.
 
-Then unpack downloaded .zip archive and run. Please note that TwseakTimeSaver is not tested at paths with spaces. It's better to not use spaces in folder names for command line scripts.
+Please note that TwseakTimeSaver is not tested at paths containing spaces. It's better to not use spaces in folder names for command line scripts.
 
 ## Using
 
