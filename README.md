@@ -22,8 +22,8 @@ Placeholder: please wait for a video or animated gif here.
 
 ## Requirements/Target
 
-- Windows 11 Pro/workstation
-- Windows 10 Pro/workstation
+- Windows 11 Pro
+- Windows 10 Pro
 
 ## Multilanguage:
 
