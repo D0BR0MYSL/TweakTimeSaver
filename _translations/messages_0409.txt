@@ -1,0 +1,226 @@
+//codepade of this document is: UTF-8
+TweakTimeSaver v1.0.0
+//common messages
+Getting system info. Please wait...
+ATTENTION: You should run this file as an Administrator.
+Done.
+Changes made will take effect after reboot.
+Creating a backup copy in a directory:
+The System restore point will be automatically created before operations.
+Creating System restore point...
+Applying settings... Please wait...
+Sorry, but this pack of settings should be applied only on Windows 11.
+//Light/Dark theme
+After pressing any key, will be applied:
+- dark appearance for applications and windows;
+- light appearance for applications and windows;
+- comfortable appearance for command consoles: 
+Command line, Powershell and Windows Terminal (incl. Preview version).
+
+
+
+//Windows Activation
+After pressing any key, Windows will be activated.
+Option1) Activate Windows manually as usual
+Option2) Store your Activation script here
+
+
+
+
+
+//Settings reset - cancel group policy changes
+Please wait... Canceling changes in Local Group Policy...
+After pressing any key, changes made by TweakTimeSaver will be reverted:
+- deleting changes made in Local Group Policy;
+- restoring state of tasks in Task Scheduler. 
+
+
+
+Restoring default state for the Tasks of Windows Task Scheduler...
+
+//(Decreasing Security) Increase Performance
+    Please note: Windows Defender won't allow to apply security settings
+  while the "Tamper Protection" is turned on.
+    Please disable the Tamper Protection before proceeding. Otherwise, not all
+  planned security settings will be applied by this program.
+    To quickly move on, just search for "tamper" text in Start Menu.
+
+    This program changes about 250 system security settings, that leads to:
+  1) lowering security level (obviously);
+  2) disabling all disturbing restrict/warn messages on Your typical actions;
+  3) increasing system performance (free up a lot of computing resources).
+
+    After pressing any key, the following mechanisms will be disabled:
+  - User Account Control (UAC);
+  - Security warning messages when opening files;
+  - Windows Defender;
+  - Smartscreen filter;
+  - Spectre and Meltwown protection;
+  - Malware Removal Tool automatic updates;
+  - drivers digital signature verification.
+
+    Windows Defender Firewall is not affected and will work as usual.
+
+
+
+
+
+
+
+//Apply system tweaks
+After pressing any key, settings will be applied that improve system
+performance and increase usability.
+Number of settings will apply:
+
+
+
+//Disable laptop and tablet functionality
+After pressing any key, these features will be disabled:
+- Disable Ink input services;
+- Disable Sensor services;
+- Hibernation file will maintain only Quick Reboot functionality;
+- Balanced Power scheme: never sleep automatically;
+- Balanced Power scheme: turn the screen off after 2 hours of inactivity.
+
+//Start menu and Taskbar - unpin all icons and pin only useful
+After pressing any key, for Start menu and Taskbar:
+- everything (pinned) will be unpinned;
+- useful daily standard apps will be pinned.
+Before start a backup will be created for current Start Menu icons pinned.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Install drivers
+Option1) Store here a Shortcut on a folder with driver packages
+Option2) Store here your driver packages
+
+//Copy user files to drive C
+A shortcut, which leads to user files, has been processed:
+After pressing any key, the contents will be copied to drive C:\
+and then the contents will be copied from:
+Option1) Store here a Shortcut on a folder with driveC backup content
+Option2) Store here your backup content for drive C
+from user folder at path:
+Note: all files on drive C:\ will be replaced if they already exist.
+
+
+
+
+//Install user fonts
+A shortcut leading to user fonts has been processed:
+After pressing any key, all user font files located along the path will be
+installed:
+Installing fonts...
+Including all fonts from directory:
+Option1) Store here a Shortcut on a folder with fonts
+Option2) Store here your fonts
+
+
+
+
+
+
+
+
+
+
+After pressing any key settings will be applied for Edge browser:
+- reducing background activity*
+- disabling updates
+Notes:
+* There is no guarantee that Edge browser will not revert its settings by itself;
++ After applying these settings Edge browser can be run as usual, if needed;
++ MSEdgeWebView2 is not affected by these settings.
+
+
+
+
+
+
+//disable shared folders and background search for local networks
+After pressing any key, some network functions will be disabled:
+- Shared folders
+- background search for Shared resources in the local network
+- Windows Media Player network service
+
+
+
+
+
+
+
+//nVidia settings
+After pressing any key, a more optimal default settings will be applied for
+nVidia GeForce Experience.
+If you have already changed some settings, they will be overwritten.
+
+
+
+
+
+
+
+
+//Disable sensor services
+After pressing any key, sensor services will be disabled.
+These services are related to notebooks and tablets mostly.
+
+
+
+
+
+
+
+
+//Steps .cmd file names
+00-1  Dark Windows colors and Command line.cmd
+00-2  Light Windows colors and Command line.cmd
+01  Install prefered browser (open folder).cmd
+02  Install runtime libraries for apps (open folder).cmd
+03  Install devices drivers and software (open folder).cmd
+04  Open Windows Update.url
+05  Open Windows Store (install prefered apps).url
+06  Apply basic set of Windows settings.cmd
+07  Start Menu and Taskbar - Unpin everything and Pin useful.cmd
+08  Adjust Power and Sensor features as for Desktop PC.cmd
+09  Change default locations of User folders (open their properties).cmd
+10  Copy user files backup to drive C (from a folder).cmd
+11  Install custom fonts (from a folder).cmd
+66  Windows Defender Antivirus - disable pernamently.cmd
+99  Windows Defender Antivirus - restore.cmd
+
+

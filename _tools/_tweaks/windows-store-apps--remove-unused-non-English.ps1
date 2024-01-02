@@ -1,0 +1,11 @@
+Get-AppxPackage *Microsoft.BingWeather* -AllUsers | Remove-AppxPackage
+Get-AppxPackage *Microsoft.BingNews* -AllUsers | Remove-AppxPackage
+Get-AppxPackage *Bing* -AllUsers | Remove-AppxPackage
+Get-AppxPackage *windowsmaps* -AllUsers | Remove-AppxPackage
+Get-AppxPackage *bingfinance* -AllUsers | Remove-AppxPackage
+Get-AppxPackage *Microsoft.Microsoft3DViewer* -AllUsers | Remove-AppxPackage
+Get-AppxPackage *Microsoft.MixedReality.Portal* -AllUsers | Remove-AppxPackage
+Get-AppxPackage *zunevideo* -AllUsers | Remove-AppxPackage
+Get-AppxPackage *Microsoft.Print3D* -AllUsers | Remove-AppxPackage
+Get-AppxPackage *zunemusic* -AllUsers | Remove-AppxPackage
+Get-AppxPackage *3dbuilder* -AllUsers | Remove-AppxPackage

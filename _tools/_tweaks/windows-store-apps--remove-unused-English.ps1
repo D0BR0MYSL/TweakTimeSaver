@@ -1,0 +1,1 @@
+Get-AppxPackage *getstarted* -AllUsers | Remove-AppxPackage
