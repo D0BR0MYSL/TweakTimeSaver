@@ -6,7 +6,7 @@
 
 - Bulk adjusting of basic Windows settings.
 - Save time aftrer installing/resetting Windows.
-- Made to be useful without showing off in manner of "revolutionary breaktrough" or "the best tweaks in the world".
+- Made to be useful without showing off in manner of "revolutionary breaktrough" or "best tweaks and bells".
 
 ## Description
 
@@ -22,8 +22,8 @@ Placeholder: please wait for a video or animated gif here.
 
 ## Requirements/Target
 
-- Windows 11 Pro/workstatiuon
-- Windows 10 Pro/workstatiuon
+- Windows 11 Pro/workstation
+- Windows 10 Pro/workstation
 
 ## Multilanguage:
 
