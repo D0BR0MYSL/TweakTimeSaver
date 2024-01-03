@@ -84,7 +84,7 @@ After pressing any key, these features will be disabled:
 
 //Start menu and Taskbar - unpin all icons and pin only useful
 After pressing any key, settings will be applied in two steps:
-Step 1. Remove system buttons from Taskbar: Task View, Copilot, Search, Chat.
+Step 1. Remove system buttons from Taskbar: Search panel, Task View, Copilot.
         There will be pause after this step to provide choice (proceed or close).
 Step 2. Everything will be unpinned from Taskbar and Start menu, including user  
         apps, and then apps suggested for daily use will be pinned.
