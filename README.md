@@ -41,7 +41,7 @@ Multianguage support Is very easy to add and expected to be driven by the commun
 
 This software is free and open source. Please note that using any software (including this one) is Your own choice and responsibility.
 
-## Included software
+## Included thirparty software
 
 Third-party tools used by whole solution are included in this package for user convenience. All credits go to respective authors.
 
