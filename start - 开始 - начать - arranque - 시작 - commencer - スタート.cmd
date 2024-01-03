@@ -22,7 +22,7 @@ if not exist 00*.cmd (
 ) else (
 	del /f /q 0*.cmd >nul 2>&1
 	del /f /q 1*.cmd >nul 2>&1
-	del /f /q 88*.cmd >nul 2>&1
+	del /f /q 66*.cmd >nul 2>&1
 	del /f /q 99*.cmd >nul 2>&1
 	xcopy "%~dp0_tools\_steps-nameless\*.cmd" "%~dp0" /S/E/F/Y >nul 2>&1
 )
