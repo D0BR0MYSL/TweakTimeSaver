@@ -83,12 +83,12 @@ After pressing any key, these features will be disabled:
 - Balanced Power scheme: turn the screen off after 2 hours of inactivity.
 
 //Start menu and Taskbar - unpin all icons and pin only useful
-After pressing any key, for Start menu and Taskbar:
-- everything (pinned) will be unpinned;
-- useful daily standard apps will be pinned.
-Before start a backup will be created for current Start Menu icons pinned.
-
-
+After pressing any key, settings will be applied in two steps:
+Step 1. Remove system buttons from Taskbar: Task View, Copilot, Search, Chat.
+        There will be pause after this step to provide choice (proceed or close).
+Step 2. Everything will be unpinned from Taskbar and Start menu, including user  
+        apps, and then apps suggested for daily use will be pinned.
+        A backup of current Start Menu layout will be created.
 
 
 
@@ -215,7 +215,7 @@ These services are related to notebooks and tablets mostly.
 04  Open Windows Update.url
 05  Open Windows Store (install prefered apps).url
 06  Apply basic set of Windows settings.cmd
-07  Start Menu and Taskbar - Unpin everything and Pin useful.cmd
+07  Start Menu and Taskbar - Unpin unuseful and Pin useful.cmd
 08  Adjust Power and Sensor features as for Desktop PC.cmd
 09  Change default locations of User folders (open their properties).cmd
 10  Copy user files backup to drive C (from a folder).cmd

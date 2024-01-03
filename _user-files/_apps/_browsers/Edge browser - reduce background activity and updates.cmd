@@ -65,7 +65,7 @@ ping localhost -n 6 >nul 2>&1
 
 rem deploying additional Group Policy applets from Microsoft
 if not exist %SystemDrive%\Windows\PolicyDefinitions\msedge.admx (
-	xcopy "..\..\..\_tools\_apps\lgpo\Microsoft Edge additional Group Policy applets\*.*" "%SystemDrive%\Windows\PolicyDefinitions\" /S/E/F/Y >nul 2>&1
+	xcopy "..\..\..\_tools\_apps\lgpo\Microsoft-Edge-additional-Group-Policy-applets\*.*" "%SystemDrive%\Windows\PolicyDefinitions\" /S/E/F/Y >nul 2>&1
 )
 
 rem Edge will not automatically install or update (only manual install/update allowed)

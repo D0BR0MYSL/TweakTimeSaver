@@ -30,7 +30,7 @@ set username=%buffer:~0,18%
 set username=%username: =%
 
 
-set /a TweaksAmount=455
+set /a TweaksAmount=444
 
 set datetime=
 
@@ -61,22 +61,12 @@ cls
 call :PrintLineNum 10
 %SystemRoot%\System32\CScript.exe "%~dp0_tools\_apps\create-restore-point\create-restore-point.vbs"
 
-rem deploying additional Group Policy applets from Microsoft
-if not exist %SystemDrive%\Windows\PolicyDefinitions\msedge.admx (
-	xcopy "%~dp0_tools\_apps\lgpo\Microsoft Edge additional Group Policy applets\*.*" "%SystemDrive%\Windows\PolicyDefinitions\" /S/E/F/Y >nul 2>&1
-)
-
 rem waiting 6 seconds for restore point creation in background
 ping localhost -n 6 >nul 2>&1
 
 cls
 @echo.
 call :PrintLineNum 11
-
-rem Disable Work folders (comrporative netweork fearure)
-dism /online /NoRestart /Disable-Feature /FeatureName:WorkFolders-Client >nul 2>&1
-set /a TweaksCounter+=1
-call :updatescreen
 
 rem take ownership of temporary system folders
 takeown /f "%temp%" /A /r /d y >nul 2>&1
@@ -92,9 +82,12 @@ Reg.exe delete "HKCU\SOFTWARE\Microsoft\Siuf\Rules" /v "PeriodInNanoSeconds" /f 
 set /a TweaksCounter+=2
 call :updatescreen
 
-REM ; Remove Copilot from taskbar
-Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowCopilotButton" /t REG_DWORD /d "0" /f >nul 2>&1
-Reg.exe add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowCopilotButton" /t REG_DWORD /d "0" /f >nul 2>&1
+rem deploying additional Group Policy applets from Microsoft
+if not exist %SystemDrive%\Windows\PolicyDefinitions\msedge.admx (
+	xcopy "%~dp0_tools\_apps\lgpo\Microsoft-Edge-additional-Group-Policy-applets\*.*" "%SystemDrive%\Windows\PolicyDefinitions\" /S/E/F/Y >nul 2>&1
+)
+set /a TweaksCounter+=1
+call :updatescreen
 
 if %UILanguage%==0419 (
 	rem convenient date format for long date
@@ -685,7 +678,7 @@ reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "IconsOnly" /t REG_DWORD /d 00000000 /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ListviewAlphaSelect" /t REG_DWORD /d 00000001 /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ListviewShadow" /t REG_DWORD /d 00000001 /f >nul 2>&1
-reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "MapNetDrvBtn" /t REG_DWORD /d 00000000 /f >nul 2>&1
+reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "MapNetDrvBtn" /t REG_DWORD /d 00000001 /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "MMTaskbarGlomLevel" /t REG_DWORD /d 00000000 /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ReindexedProfile" /t REG_DWORD /d 00000001 /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "SeparateProcess" /t REG_DWORD /d 00000000 /f >nul 2>&1
@@ -753,39 +746,30 @@ set /a TweaksCounter+=1
 call :updatescreen
 
 rem taskbar allign leftrem  reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarAl" /t REG_DWORD /d 00000000 /f >nul 2>&1
-reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarMn" /t REG_DWORD /d "0" /f >nul 2>&1
+
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarAnimations" /t REG_DWORD /d 00000001 /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarAutoHideInTabletMode" /t REG_DWORD /d 00000000 /f >nul 2>&1
-reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarDa" /t REG_DWORD /d 00000000 /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarGlomLevel" /t REG_DWORD /d 00000000 /f >nul 2>&1
-reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarMn" /t REG_DWORD /d 00000000 /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarSizeMove" /t REG_DWORD /d 00000000 /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarSmallIcons" /t REG_DWORD /d 00000000 /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarSn" /t REG_DWORD /d 00000001 /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarStateLastRun"=hex:b4,ab,36,65,00,00,00,00 /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "WinXMigrationLevel" /t REG_DWORD /d 00000001 /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\StartMode" /v "ActualStartMode" /t REG_DWORD /d 00000001 /f >nul 2>&1
-reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowTaskViewButton" /t REG_DWORD /d "0" /f >nul 2>&1
-reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowTaskViewButton" /t REG_DWORD /d "0" /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarDeveloperSettings" /v "TaskbarEndTask" /t REG_DWORD /d "1" /f >nul 2>&1
 
 rem taskbar allign leftrem  reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarAl" /t REG_DWORD /d 00000000 /f >nul 2>&1
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarMn" /t REG_DWORD /d "0" /f >nul 2>&1
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarAnimations" /t REG_DWORD /d 00000001 /f >nul 2>&1
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarAutoHideInTabletMode" /t REG_DWORD /d 00000000 /f >nul 2>&1
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarDa" /t REG_DWORD /d 00000000 /f >nul 2>&1
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarGlomLevel" /t REG_DWORD /d 00000000 /f >nul 2>&1
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarMn" /t REG_DWORD /d 00000000 /f >nul 2>&1
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarSizeMove" /t REG_DWORD /d 00000000 /f >nul 2>&1
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarSmallIcons" /t REG_DWORD /d 00000000 /f >nul 2>&1
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarSn" /t REG_DWORD /d 00000001 /f >nul 2>&1
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarStateLastRun"=hex:b4,ab,36,65,00,00,00,00 /f >nul 2>&1
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "WinXMigrationLevel" /t REG_DWORD /d 00000001 /f >nul 2>&1
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\StartMode" /v "ActualStartMode" /t REG_DWORD /d 00000001 /f >nul 2>&1
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowTaskViewButton" /t REG_DWORD /d "0" /f >nul 2>&1
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "ShowTaskViewButton" /t REG_DWORD /d "0" /f >nul 2>&1
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarDeveloperSettings" /v "TaskbarEndTask" /t REG_DWORD /d "1" /f >nul 2>&1
-set /a TweaksCounter+=16
+set /a TweaksCounter+=10
 call :updatescreen
 
 
@@ -850,10 +834,16 @@ call :updatescreen
 
 rem OneDrive - remove Notifications
 reg add "HKU\%onedrive%\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Microsoft.SkyDrive.Desktop" /t REG_DWORD /d 0 /f >nul 2>&1
-Reg.exe add "HKU\%usersid%\Software\Microsoft\OneDrive" /v "TimerGrowthToast" /t REG_DWORD /d "1704740217" /f >nul 2>&1
-Reg.exe add "HKU\%usersid%\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Microsoft.SkyDrive.Desktop" /v "PeriodicInteractionCount" /t REG_DWORD /d "1" /f >nul 2>&1
+Reg.exe add "HKU\%usersid%\Software\Microsoft\OneDrive" /v "TimerGrowthToast" /t REG_DWORD /d "-1" /f >nul 2>&1
+Reg.exe add "HKU\%usersid%\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Microsoft.SkyDrive.Desktop" /v "PeriodicInteractionCount" /t REG_DWORD /d "1" /f >nul 
+2>&1
 set /a TweaksCounter+=2
 call :updatescreen
+
+rem Settings - Notifications - Additional settings: disable reminder "let's customize your experience" forcing to sign-in into MS-account and disable new features tutorials after updates
+Reg.exe add "HKU\S-1-5-21-1602870721-1569511729-3487551318-1001\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-310093Enabled" /t REG_DWORD /d "0" /f >nul 2>&1
+Reg.exe add "HKU\S-1-5-21-1602870721-1569511729-3487551318-1001\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338389Enabled" /t REG_DWORD /d "0" /f >nul 2>&1
+Reg.exe add "HKU\S-1-5-21-1602870721-1569511729-3487551318-1001\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v "ScoobeSystemSettingEnabled" /t REG_DWORD /d "0" /f >nul 2>&1
 
 rem Sign-In Screen - Tweaks
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System" /v "DisableAcrylicBackgroundOnLogon" /t REG_DWORD /d 00000001 /f >nul 2>&1

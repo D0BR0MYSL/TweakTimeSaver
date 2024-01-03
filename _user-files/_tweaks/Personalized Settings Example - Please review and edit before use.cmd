@@ -24,13 +24,28 @@ pause
 
 @echo on
 
+rem getting User SID
 for /F "tokens=2" %%i in ('whoami /user /fo table /nh') do set usersid=%%i
+
+rem getting User account name 
+for /f "delims=" %%i in ('wmic useraccount get name^,sid ^| findstr /vi "SID"') do @for /F %%a in ("%%i") do if exist "C:\users\%%a" set buffer=%%i
+set username=%buffer:~0,18%
+set username=%username: =%
+
+rem copy Edge settings file having some defaults for convenience
+xcopy "..\..\_user-files\_apps\_browsers\Edge-new-default-settings\Preferences" "C:\Users\%username%\AppData\Local\Microsoft\Edge\User Data\Default\" /S/E/F/Y
+xcopy "..\..\_user-files\_apps\_browsers\Edge-new-default-settings\Preferences" "C:\Users\%username%\AppData\Local\Microsoft\Edge\User Data\Profile 1\" /S/E/F/Y
+
+rem Disable Work folders (comrporative netweork fearure)
+dism /online /NoRestart /Disable-Feature /FeatureName:WorkFolders-Client >nul 2>&1
+set /a TweaksCounter+=1
+call :updatescreen
 
 rem convenient date format for long date
 Reg.exe add "HKCU\Control Panel\International" /v "sLongDate" /t REG_SZ /d "yyyy.MM.dd" /f >nul 2>&1
 
 rem remove unused apps from Windows Store
-powershell.exe -file "%~dp0_tools\_tweaks\windows-store-apps--remove-unused-English.ps1"
+powershell.exe -file "..\..\_tools\_tweaks\windows-store-apps--remove-unused-English.ps1"
 
 rem keyboard Preload usersid - for Russian keyboard
 rem reg add "HKEY_USERS\%usersid%\Keyboard Layout\Preload" /v "1" /t REG_SZ /d "00000409" /f >nul 2>&1
@@ -39,7 +54,7 @@ rem reg add "HKEY_CURRENT_USER\Keyboard Layout\Preload" /v "1" /t REG_SZ /d "000
 rem reg add "HKEY_CURRENT_USER\Keyboard Layout\Preload" /v "2" /t REG_SZ /d "00000419" /f >nul 2>&1
 rem reg add "HKEY_USERS\.DEFAULT\Keyboard Layout\Preload" /v "1" /t REG_SZ /d "00000409" /f >nul 2>&1
 rem reg add "HKEY_USERS\.DEFAULT\Keyboard Layout\Preload" /v "2" /t REG_SZ /d "00000419" /f >nul 2>&1
-rem "%~dp0_tools\_apps\PowerRun\PowerRun.exe" "reg.exe" add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\SystemProtectedUserData\%usersid%\AnyoneRead\LanguageProfile" /v "Profile" /t REG_SZ /d "User Profile#Languages+Men-US@ru@&ShowAutoCorrection+D1&ShowTextPrediction+D1&ShowCasing+D1&ShowShiftLock+D1&WindowsOverride+Sru%%User Profile/en-US#0409:00000409+D1&CachedLanguageName+S@Winlangdb.dll,-1121%%User Profile/ru#0419:00000419+D1&CachedLanguageName+S@Winlangdb.dll,-1390" /f >nul 2>&1
+rem "..\..\_tools\_apps\PowerRun\PowerRun.exe" "reg.exe" add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\SystemProtectedUserData\%usersid%\AnyoneRead\LanguageProfile" /v "Profile" /t REG_SZ /d "User Profile#Languages+Men-US@ru@&ShowAutoCorrection+D1&ShowTextPrediction+D1&ShowCasing+D1&ShowShiftLock+D1&WindowsOverride+Sru%%User Profile/en-US#0409:00000409+D1&CachedLanguageName+S@Winlangdb.dll,-1121%%User Profile/ru#0419:00000419+D1&CachedLanguageName+S@Winlangdb.dll,-1390" /f >nul 2>&1
 rem 
 
 rem disable lock screen with slideshow
