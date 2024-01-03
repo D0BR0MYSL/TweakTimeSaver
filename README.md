@@ -10,13 +10,13 @@
 
 ## Description
 
-This is a toolset of command line script files providing slightly better settings for Windows. Each script is represented as a Step to apply group of settings at once. The Step files have self-documented names for sequential launch. You may run or skip any Step. When starting the Step. a short summary message is shown, nothing will apply until You pess a key twice.
+This is a toolset of command line script files providing slightly better settings for Windows. Each script is represented as a Step to apply group of settings at once. The Step files have self-documented names for sequential launch. You may run or skip any Step. You may edit any Step's source to suit your needs (tweaks are commented on what they do). When starting the Step, a short summary message is shown, nothing will apply until You pess a key twice.
 
 TweakTimeSaver has a seamlessly integrated mechanism for deployment of additional user settings and backups. It's optional, easy to use and being offered during use in very friendly way without distrubance.
 
 ## How to download and deploy
 
-If you are not familiar with Github yet, just hit the green "Code" button at the top right corner of this page and choose "Download ZIP" option. Then unpack downloaded .zip archive and run "start" script.
+If you are not familiar with Github website yet, just hit the green "Code" button at the top right corner of this page and choose "Download ZIP" option. Then unpack downloaded .zip archive and run "start" script - Steps files will be revealed and ready for use.
 
 Please note that TwseakTimeSaver is not tested at paths containing spaces. It's better to not use spaces in folder names for command line scripts.
 
