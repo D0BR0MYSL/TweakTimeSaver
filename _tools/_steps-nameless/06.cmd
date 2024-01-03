@@ -30,7 +30,7 @@ set username=%buffer:~0,18%
 set username=%username: =%
 
 
-set /a TweaksAmount=452
+set /a TweaksAmount=455
 
 set datetime=
 
@@ -839,7 +839,12 @@ Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\CIDOpen\Mod
 rem faster mouse wheel scrolling
 reg add "HKEY_USERS\%usersid%\Control Panel\Desktop" /v "WheelScrollChars" /t REG_SZ /d "7" /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Control Panel\Desktop" /v "WheelScrollLines" /t REG_SZ /d "7" /f >nul 2>&1
-set /a TweaksCounter+=2
+rem disable Enhance pointer precision 
+Reg.exe add "HKCU\Control Panel\Mouse" /v "MouseSpeed" /t REG_SZ /d "0" /f >nul 2>&1
+Reg.exe add "HKCU\Control Panel\Mouse" /v "MouseThreshold1" /t REG_SZ /d "0" /f >nul 2>&1
+Reg.exe add "HKCU\Control Panel\Mouse" /v "MouseThreshold2" /t REG_SZ /d "0" /f >nul 2>&1
+
+set /a TweaksCounter+=5
 call :updatescreen
 
 
