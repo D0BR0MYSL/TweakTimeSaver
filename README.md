@@ -26,7 +26,7 @@ Placeholder for a video or animated gif
 
 ### Tips on use
 
-- Run "start" script to reveal a set of command line batch script files. They are named in according with native language used in system (if traslation file is present).
+- Run "start" script to reveal a set of command line batch script files. They are named in according with Windows language (if traslation file is present).
 - Script files is represented as a Steps to apply groups of settings at once and have self-documented names for sequential launch.
 - Any Step can be skiped.
 - When starting, a short summary message is shown and nothing will apply until You press a key twice. Restore Point is being created automatically before actions.
