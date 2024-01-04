@@ -2,28 +2,30 @@
 
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows11/10&color=blue&style=flat) ![](https://img.shields.io/static/v1?label=code&message=bathfile&color=red&style=flat)
 
-## Purpose
+## Purposea
 
-- Bulk adjusting of basic Windows settings
-- Save time aftrer installing/resetting Windows
-- Made to be useful without showing off in manner of "revolutionary best tweaks and bells"
+- Provides slightly better basic settings for Windows
+- Saves time after installing/resetting Windows
+- Made to be practically useful without any harm, and not for showing off in manner of "revolutionary best tweaks and nerdy bells"
 
 ## Description
 
-This is a toolset of command line script files providing slightly better settings for Windows. Each script is represented as a Step to apply group of settings at once. The Step files have self-documented names for sequential launch. You may run or skip any Step. You may edit any Step's source to suit your needs (tweaks are commented on what they do). When starting the Step, a short summary message is shown, nothing will apply until You pess a key twice.
+This is a toolset of command line batch script files. Each script is represented as a Step to apply group of settings at once. Step files have self-documented names for sequential launch., Any Step can be skiped. When starting, a short summary message is shown, nothing will apply until You press a key twice. Restore Point is being created automatically before actions.
 
 TweakTimeSaver has a seamlessly integrated mechanism for deployment of additional user settings and backups. It's optional, easy to use and being offered during use in very friendly way without distrubance.
 
 ## How to download and deploy
 
-If you are not familiar with Github website yet, just hit the green "Code" button at the top right corner of this page and choose "Download ZIP" option. Then unpack downloaded .zip archive and run "start" script - Steps files will be revealed and ready for use.
-
-Please note that TwseakTimeSaver is not tested at paths containing spaces. It's better to not use spaces in folder names for command line scripts.
+If you are not familiar with Github website yet, just hit the green "Code" button at the top right corner of this page and choose "Download ZIP" option. Then unpack downloaded .zip archive.
 
 ## Using
 
+Please note that TwseakTimeSaver has not been tested at paths containing spaces, but should work. It's just better to not use spaces in folder names for command line scripts.
+
+To begin run "start" script to reveal the Steps files. They are being renamed in according with native language used in system (if traslation file is present).
+
 ```
-Please wait for a video or animated gif here.
+Placeholder for a video or animated gif
 ```
 
 ## Requirements/Target
