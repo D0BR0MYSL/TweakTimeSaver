@@ -10,9 +10,7 @@
 
 ## Using
 
-```
-Placeholder for a video or animated gif
-```
+![](https://imgur.com/saPcnLr.gif)
 
 ### Requirements/Target
 
