@@ -31,7 +31,7 @@ Placeholder for a video or animated gif
 - Step files have self-documented names for sequential launch.
 - Any Step can be skiped.
 - When starting, a short summary message is shown and nothing will apply until You press a key twice. Restore Point is being created automatically before actions.
-- TweakTimeSaver has a seamlessly integrated mechanism for deployment of additional user settings and backups. It's optional, easy to use and being offered during use in very friendly way without distrubance.
+- TweakTimeSaver has a seamlessly integrated mechanism for deployment of additional user settings and backups. It's optional, easy to use and being offered in very friendly way without distrubance.
 
 Thanks for reading! TweakTimeSaver helped me a lot. I hope that it will be useful for You too!
 
@@ -68,7 +68,3 @@ Third-party tools used by whole solution are included in this package for user c
 [pttb - Pin To TaskBar](https://https://github.com/0x546F6D/pttb_-_Pin_To_TaskBar)
 
 [SetACL by Helge Klein](https://helgeklein.com/setacl/)
-
-## Support
-
-Support is being provided when the author have time _(He's an adult person having a job, paying bills, dreaming of rest in the evening)_.
