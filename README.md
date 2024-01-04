@@ -10,7 +10,7 @@
 
 ## Using
 
-![Please wait until YouTube video will be made](https://github.com/D0BR0MYSL/Big-Gifs/blob/main/TweakTimeSaver_Preview.gif)
+![Please wait until YouTube video will be made](https://github.com/D0BR0MYSL/Big-Gifs/blob/main/TweakTimeSaver_preview.gif)
 
 ### Requirements/Target
 
