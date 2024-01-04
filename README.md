@@ -13,7 +13,7 @@
 ```
 Placeholder for a video or animated gif
 ```
-[![blah blah](https://i.imgur.com/nQZrBbx.gif)](https://www.youtube.com)
+
 ### Requirements/Target
 
 - Windows 11 Pro
