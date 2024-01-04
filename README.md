@@ -24,11 +24,10 @@ Placeholder for a video or animated gif
 - If you are not familiar with Github website yet, just hit the green "Code" button at the top right corner of this page and choose "Download ZIP" option. Then unpack downloaded .zip archive.
 - Please note that TwseakTimeSaver has not been tested at paths containing spaces, but should work. It's just better to not use spaces in folder names for command line scripts.
 
-### How to use
+### Tips on use
 
-- Run "start" script to reveal the Steps files. They are being renamed in according with native language used in system (if traslation file is present).
-- Each command line batch script file is represented as a Step to apply group of settings at once.
-- Step files have self-documented names for sequential launch.
+- Run "start" script to reveal a set of command line batch script files. They are named in according with native language used in system (if traslation file is present).
+- Script files is represented as a Steps to apply groups of settings at once and have self-documented names for sequential launch.
 - Any Step can be skiped.
 - When starting, a short summary message is shown and nothing will apply until You press a key twice. Restore Point is being created automatically before actions.
 - TweakTimeSaver has a seamlessly integrated mechanism for deployment of additional user settings and backups. It's optional, easy to use and being offered in very friendly way without distrubance.
