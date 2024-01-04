@@ -33,6 +33,8 @@ Placeholder for a video or animated gif
 - When starting, a short summary message is shown and nothing will apply until You press a key twice. Restore Point is being created automatically before actions.
 - TweakTimeSaver has a seamlessly integrated mechanism for deployment of additional user settings and backups. It's optional, easy to use and being offered during use in very friendly way without distrubance.
 
+Thanks for reading! TweakTimeSaver helped me a lot. I hope that it will be useful for You too!
+
 ## Multilanguage support:
 
 English file names and messages are being used if language file for current system is not present inside `_translations` subfolder.
