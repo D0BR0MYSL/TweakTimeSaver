@@ -1,6 +1,6 @@
 # TweakTimeSaver
 
-![Platform](https://img.shields.io/static/v1?label=platform&message=windows11/10&color=blue&style=flat) ![](https://img.shields.io/static/v1?label=code&message=bathfile&color=red&style=flat)
+![Platform](https://img.shields.io/static/v1?label=platform&message=windows11/10&color=blue&style=flat) ![](https://img.shields.io/static/v1?label=code&message=batch-language&color=red&style=flat)
 
 ## Purpose
 
