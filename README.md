@@ -10,7 +10,7 @@
 
 ## Using
 
-![](https://imgur.com/saPcnLr.gif)
+![Please wait until YouTube video will be made](http://i.imgur.com/saPcnLr.gif)
 
 ### Requirements/Target
 
