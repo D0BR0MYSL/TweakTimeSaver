@@ -17,6 +17,11 @@ if %UILanguage%==0419 (
 rem program version in cmd window title
 call :SetWindowTitle 2
 
+rem removing temporary file served for uploading an empty directory on Github
+if exist "%~dp0_user-files\_files-c\dummy.txt" (
+	del /f /q "%~dp0_user-files\_files-c\dummy.txt" >nul 2>&1
+)
+
 rem checking if any subfolders exist inside user folder for drive C content
 for /d %%g in ("%~dp0_user-files\_files-c\*") do (
 	set UserFolderProcessing=True

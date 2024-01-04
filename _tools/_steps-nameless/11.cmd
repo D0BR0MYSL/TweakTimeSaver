@@ -12,6 +12,11 @@ if %UILanguage%==0419 (
 rem program version in cmd window title
 call :SetWindowTitle 2
 
+rem removing temporary file served for uploading an empty directory on Github
+if exist "%~dp0_user-files\_files-c\dummy.txt" (
+	del /f /q "%~dp0_user-files\_files-c\dummy.txt" >nul 2>&1
+)
+
 >NUL 2>&1 REG QUERY "HKU\S-1-5-19" ||(
 	echo.
 	call :PrintLineNum 5

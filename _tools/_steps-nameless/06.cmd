@@ -287,7 +287,7 @@ set /a TweaksCounter+=1
 call :updatescreen
 
 
-rem 
+rem decluttering classic context menu of Files Explorer
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked" /v "{55B3A0BD-4D28-42fe-8CFB-FA3EDFF969B8}" /t REG_SZ /d "" /f >nul 2>&1
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked" /v "{7EFA68C6-086B-43e1-A2D2-55A113531240}" /t REG_SZ /d "" /f >nul 2>&1
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked" /v "{474C98EE-CF3D-41f5-80E3-4AAB0AB04301}" /t REG_SZ /d "" /f >nul 2>&1
@@ -588,8 +588,8 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RegEdit" /
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RegEdit" /v "FontSize" /t REG_DWORD /d 0000006e /f >nul 2>&1
 
 rem Scrollbars - Wider and Always visible
-reg add "HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics" /v "ScrollHeight" /t REG_SZ /d "-330" /f >nul 2>&1
-reg add "HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics" /v "ScrollWidth" /t REG_SZ /d "-330" /f >nul 2>&1
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics" /v "ScrollHeight" /t REG_SZ /d "-360" /f >nul 2>&1
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics" /v "ScrollWidth" /t REG_SZ /d "-360" /f >nul 2>&1
 reg add "HKEY_USERS\%usersid%\Control Panel\Accessibility" /v "DynamicScrollbars" /t REG_DWORD /d "0" /f >nul 2>&1
 
 rem Store Apps - Disable Install at Login
@@ -832,18 +832,10 @@ set /a TweaksCounter+=5
 call :updatescreen
 
 
-rem OneDrive - remove Notifications
-reg add "HKU\%onedrive%\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Microsoft.SkyDrive.Desktop" /t REG_DWORD /d 0 /f >nul 2>&1
-Reg.exe add "HKU\%usersid%\Software\Microsoft\OneDrive" /v "TimerGrowthToast" /t REG_DWORD /d "-1" /f >nul 2>&1
-Reg.exe add "HKU\%usersid%\Software\Microsoft\Windows\CurrentVersion\Notifications\Settings\Microsoft.SkyDrive.Desktop" /v "PeriodicInteractionCount" /t REG_DWORD /d "1" /f >nul 
-2>&1
-set /a TweaksCounter+=2
-call :updatescreen
-
 rem Settings - Notifications - Additional settings: disable reminder "let's customize your experience" forcing to sign-in into MS-account and disable new features tutorials after updates
-Reg.exe add "HKU\S-1-5-21-1602870721-1569511729-3487551318-1001\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-310093Enabled" /t REG_DWORD /d "0" /f >nul 2>&1
-Reg.exe add "HKU\S-1-5-21-1602870721-1569511729-3487551318-1001\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338389Enabled" /t REG_DWORD /d "0" /f >nul 2>&1
-Reg.exe add "HKU\S-1-5-21-1602870721-1569511729-3487551318-1001\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v "ScoobeSystemSettingEnabled" /t REG_DWORD /d "0" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-310093Enabled" /t REG_DWORD /d "0" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SubscribedContent-338389Enabled" /t REG_DWORD /d "0" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v "ScoobeSystemSettingEnabled" /t REG_DWORD /d "0" /f >nul 2>&1
 
 rem Sign-In Screen - Tweaks
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System" /v "DisableAcrylicBackgroundOnLogon" /t REG_DWORD /d 00000001 /f >nul 2>&1

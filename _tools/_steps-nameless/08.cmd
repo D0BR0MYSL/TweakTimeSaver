@@ -25,12 +25,14 @@ rem getting User SID
 for /F "tokens=2" %%i in ('whoami /user /fo table /nh') do set usersid=%%i
 
 @echo.
+call :PrintLineNum 77
 call :PrintLineNum 78
 call :PrintLineNum 79
 call :PrintLineNum 80
 call :PrintLineNum 81
 call :PrintLineNum 82
 call :PrintLineNum 83
+call :PrintLineNum 84
 @echo.
 @echo.
 if [%1]==[] pause >nul
