@@ -2,7 +2,7 @@
 
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows11/10&color=blue&style=flat) ![](https://img.shields.io/static/v1?label=code&message=bathfile&color=red&style=flat)
 
-## Purposea
+## Purpose
 
 - Provides slightly better basic settings for Windows
 - Saves time after installing/resetting Windows
