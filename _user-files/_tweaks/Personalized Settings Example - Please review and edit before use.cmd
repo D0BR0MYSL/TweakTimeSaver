@@ -24,6 +24,9 @@ pause
 
 @echo on
 
+rem setting path to current script to prevent resetting it when running through cmd.exe
+pushd %~dp0
+
 rem getting User SID
 for /F "tokens=2" %%i in ('whoami /user /fo table /nh') do set usersid=%%i
 

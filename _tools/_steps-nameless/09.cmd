@@ -1,57 +1,190 @@
 @echo off
 
-rem silently closing GeekDropProps.exe background process after previous step
-taskkill /F /IM GeekDropProps.exe >nul 2>&1
+for /f "tokens=3" %%a in ('reg query "HKLM\SYSTEM\CONTROLSET001\CONTROL\NLS\Language" /v Installlanguage') do set UILanguage=%%a
+call :CheckTranslastionFileAvailable
 
-setlocal enableextensions
-
-set ReadRegistryValueResult=
-
-
-set RegKeyArg=HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders
-
-set RegParamArg=My Music
-call :ReadRegistryValue
-set ShellFolderMusic=%ReadRegistryValueResult%
-
-set RegParamArg=My Pictures
-call :ReadRegistryValue
-set ShellFolderPictures=%ReadRegistryValueResult%
-
-set RegParamArg=My Video
-call :ReadRegistryValue
-set ShellFolderVideos=%ReadRegistryValueResult%
-
-set RegParamArg={4C5C32FF-BB9D-43B0-B5B4-2D72E54EAAA4}
-call :ReadRegistryValue
-set ShellFolderMyGames=%ReadRegistryValueResult%
-
-for /f "tokens=3" %%a in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /V "Personal" ^|findstr /ri "REG_SZ"') do set ShellFolderDocuments=%%a
-
-for /f "tokens=3" %%a in ('reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" /V "{374DE290-123F-4565-9164-39C4925E467B}" ^|findstr /ri "REG_SZ"') do set ShellFolderDownloads=%%a
-
-
-if exist "%~dp0_tools\_apps\GeekDropProps\GeekDropProps.exe" (
-	start /d "%~dp0_tools\_apps\GeekDropProps" GeekDropProps.exe %ShellFolderVideos%
-	start /d "%~dp0_tools\_apps\GeekDropProps" GeekDropProps.exe %ShellFolderMusic%
-	start /d "%~dp0_tools\_apps\GeekDropProps" GeekDropProps.exe %ShellFolderMyGames%
-	start /d "%~dp0_tools\_apps\GeekDropProps" GeekDropProps.exe %ShellFolderPictures%
-	start /d "%~dp0_tools\_apps\GeekDropProps" GeekDropProps.exe %ShellFolderDocuments%
-	start /d "%~dp0_tools\_apps\GeekDropProps" GeekDropProps.exe %ShellFolderDownloads%
+if %UILanguage%==0419 (
+	chcp 1251 >nul 2>&1
 ) else (
-	start explorer file:"%UserProfile%\Documents\"
-	start explorer file:"%UserProfile%\Downloads\"
-	start explorer file:"%UserProfile%\Pictures\"
-	start explorer file:"%UserProfile%\Videos\"
-	start explorer file:"%UserProfile%\Downloads\"
-	start explorer file:"%UserProfile%\My Games\"
+	chcp 65001 >nul 2>&1
+)
+
+rem program version in cmd window title
+call :SetWindowTitle 2
+
+rem removing temporary file served for uploading an empty directory on Github
+if exist "%~dp0_user-files\_files-c\dummy.txt" (
+	del /f /q "%~dp0_user-files\_files-c\dummy.txt" >nul 2>&1
+)
+
+if not exist "%~dp0_user-files\_fonts\*.lnk" goto :NoLnkFound
+
+rem Taking full path to the shortcut file for processing
+for %%f in ("%~dp0_user-files\_fonts\*.lnk") do set shortcut_path=%%f
+
+rem non-English language specific operation:
+rem temporarily changing codepage that matches the system command console's codepage
+rem to set "extracted_path" variable value in system console codepage, so that it will
+rem be converted corretly when @echoed and used
+if %UILanguage%==0419 chcp 866 >nul 2>&1
+
+rem Extract target from shortcut
+if not "%shortcut_path%"=="" (
+	for /f "delims=" %%a in ('wmic path win32_shortcutfile where "name='%shortcut_path:\=\\%'" get target /value') do for /f "tokens=2 delims==" %%b in ("%%~a") do set extracted_path=%%~b
+)
+
+rem Non-English language specific operation:
+rem returning codepage to initial value
+if %UILanguage%==0419 chcp 1251 >nul 2>&1
+
+if exist "%extracted_path%\*.?tf" (
+	rem Installing fonts taken through the .lnk-file
+	@echo.
+	call :PrintLineNum 144
+	@echo %shortcut_path%
+	@echo.
+	call :PrintLineNum 145
+	call :PrintLineNum 146
+	@echo %extracted_path%\
+	if exist "%~dp0_user-files\_fonts\*.?tf" (
+		@echo.
+		call :PrintLineNum 148
+		@echo %~dp0_user-files\_fonts\
+	)
+
+	@echo.
+	if [%1]==[] pause >nul
+	if [%1]==[] pause
+
+	@echo.
+	call :PrintLineNum 147
+
+	call :InstallFontsFromLnkPath
+
+	rem Installing fonts from ".\_user-files\_fonts\" directory if there any
+	if exist "%~dp0_user-files\_fonts\*.?tf" (
+		call :InstallFontsFromUserFiles
+	)
+
+	@echo.
+	@echo.
+	call :PrintLineNum 6
+	@echo.
+	@echo.
+	if [%1]==[] pause
+
+	exit /b
+
+)
+
+:NoLnkFound
+
+rem if there was no .lnk-file then try installing from ".\_user-files\_fonts\" directory
+if exist "%~dp0_user-files\_fonts\*.?tf" (
+	>NUL 2>&1 REG QUERY "HKU\S-1-5-19" ||(
+		echo.
+		call :PrintLineNum 5
+ 		echo.
+		pause >nul
+		pause
+		goto :eof
+	)
+
+	@echo.
+	call :PrintLineNum 145
+	call :PrintLineNum 146
+	@echo %~dp0_user-files\_fonts\
+	@echo.
+	if [%1]==[] pause >nul
+	if [%1]==[] pause
+	@echo.
+	call :PrintLineNum 147
+
+	call :InstallFontsFromUserFiles
+
+	@echo.
+	@echo.
+	call :PrintLineNum 6
+	@echo.
+	if [%1]==[] pause
+
+	exit /b
+
+) else (
+	rem generate .txt "readme" files with language specific names
+	call :SetFileNameFromLineNum 149
+	call :SetFileNameFromLineNum 150
+
+	rem show "readme" files in user fonts folder
+	start explorer "%~dp0_user-files\_fonts\"
 )
 
 exit /b
 
 
+:InstallFontsFromUserFiles
+	rem Installing fonts from ".\_user-files\_fonts\" directory if there any
+	copy /Y "%~dp0_tools\_apps\fontreg\fontreg.exe" "%~dp0_user-files\_fonts\" >nul
 
-:ReadRegistryValue
-for /f "tokens=1,2* skip=2 delims=:" %%a in ('REG QUERY "%RegKeyArg%" /v "%RegParamArg%" 2^>nul') do (set "regA=%%a" & set "regB=%%b")
-set ReadRegistryValueResult=%regA:~-1%:%regB%
+	rem set working directory for fontreg.exe
+	set fullpath=%~dp0
+	set driveletter=%fullpath:~0,1%
+	%driveletter%:
+	cd "%~dp0_user-files\_fonts\"
+	
+	FontReg.exe /copy
+
+	del /f/q FontReg.exe >nul
+
+	exit /b
+
+
+:InstallFontsFromLnkPath
+	rem Installing fonts from user's external directory if there any
+	copy /Y "%~dp0_tools\_apps\fontreg\fontreg.exe" "%extracted_path%\" >nul
+
+	rem set working directory for fontreg.exe
+	set driveletter1=%extracted_path:~0,1%
+	%driveletter1%:
+	cd %extracted_path%
+
+	FontReg.exe /copy
+
+	del /f/q FontReg.exe >nul
+	
+	exit /b
+
+
+:SetFileNameFromLineNum
+set LineNum=%1
+set /a LineNum-=1
+for /f "usebackq delims=" %%a in (`more +%LineNum% "%~dp0_translations\messages_%UILanguage%.txt"`) do (
+	@echo %%a >"%~dp0_user-files\_fonts\%%a.txt"
+	exit /b
+)
+
+
+:PrintLineNum
+set LineNum=%1
+set /a LineNum-=1
+for /f "usebackq delims=" %%a in (`more +%LineNum% "%~dp0_translations\messages_%UILanguage%.txt"`) do (
+	echo %%a
+	exit /b
+)
+
+:SetWindowTitle
+set LineNum=%1
+set /a LineNum-=1
+for /f "usebackq delims=" %%a in (`more +%LineNum% "%~dp0_translations\messages_%UILanguage%.txt"`) do (
+	title %%a
+	exit /b
+)
+
+
+:CheckTranslastionFileAvailable
+rem set English language if language file was not found
+if not exist "%~dp0_translations\messages_%UILanguage%.txt" (
+	set UILanguage=0409
+)
+:eof
 exit /b

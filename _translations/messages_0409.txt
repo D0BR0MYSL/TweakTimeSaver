@@ -30,16 +30,16 @@ Option2) Store your Activation script here
 
 //Settings reset - cancel group policy changes
 Please wait... Canceling changes in Local Group Policy...
-After pressing any key, changes made by TweakTimeSaver will be reverted:
-- deleting changes made in Local Group Policy;
-- restoring state of tasks in Task Scheduler. 
-
+After pressing any key, Windows Defender security mechanisms reverted in initial
+state and all changes made by TweakTimeSaver will be canceled:
+- changes made to Local Group Policy;
+- tasks in Task Scheduler.
 
 
 Restoring default state for the Tasks of Windows Task Scheduler...
 
 //(Decreasing Security) Increase Performance
-    Please note: Windows Defender won't allow to apply security settings
+    Please note: Windows Defender won't allow to apply security policy settings
   while the "Tamper Protection" is turned on.
     Please disable the Tamper Protection before proceeding. Otherwise, not all
   planned security settings will be applied by this program.
@@ -68,8 +68,8 @@ Restoring default state for the Tasks of Windows Task Scheduler...
 
 
 //Apply system tweaks
-After pressing any key, settings will be applied that improve system
-performance and increase usability.
+After pressing any key, settings will be applied to improve overall Windows
+usability, that helps achieve Your daily workflow faster.
 Number of settings will apply:
 
 
@@ -84,7 +84,7 @@ After pressing any key, these features will be disabled:
     * disable wake timers during Sleep.
 //Start menu and Taskbar - unpin all icons and pin only useful
 After pressing any key, settings will be applied in two steps:
-Step 1. Remove system buttons from Taskbar: Search panel, Task View, Copilot.
+Step 1. Remove system buttons from Taskbar: Search, Task View, Copilot.
         There will be pause after this step to provide choice (proceed or close).
 Step 2. Everything will be unpinned from Taskbar and Start menu, including user  
         apps, and then apps suggested for daily use will be pinned.
@@ -159,8 +159,8 @@ Option2) Store here your fonts
 
 
 After pressing any key settings will be applied for Edge browser:
-- reducing background activity*
-- disabling updates
+- reducing background activity * ;
+- disabling updates.
 Notes:
 * There is no guarantee that Edge browser will not revert its settings by itself;
 + After applying these settings Edge browser can be run as usual, if needed;
@@ -171,11 +171,6 @@ Notes:
 
 
 
-//disable shared folders and background search for local networks
-After pressing any key, some network functions will be disabled:
-- Shared folders
-- background search for Shared resources in the local network
-- Windows Media Player network service
 
 
 
@@ -183,10 +178,15 @@ After pressing any key, some network functions will be disabled:
 
 
 
-//nVidia settings
-After pressing any key, a more optimal default settings will be applied for
-nVidia GeForce Experience.
-If you have already changed some settings, they will be overwritten.
+
+
+
+
+
+
+
+
+
 
 
 
@@ -207,20 +207,18 @@ These services are related to notebooks and tablets mostly.
 
 
 //Steps .cmd file names
-00-1  Dark Windows colors and Command line.cmd
-00-2  Light Windows colors and Command line.cmd
-01  Install prefered browser (open folder).cmd
-02  Install runtime libraries for apps (open folder).cmd
-03  Install devices drivers and software (open folder).cmd
-04  Open Windows Update.url
-05  Open Windows Store (install prefered apps).url
-06  Apply basic set of Windows settings.cmd
-07  Start Menu and Taskbar - Unpin unuseful and Pin useful.cmd
-08  Adjust Power and Sensor features as for Desktop PC.cmd
-09  Change default locations of User folders (open their properties).cmd
-10  Copy user files backup to drive C (from a folder).cmd
-11  Install custom fonts (from a folder).cmd
-66  Windows Defender Antivirus - disable pernamently.cmd
-99  Windows Defender Antivirus - restore.cmd
+00-1  Dark Windows colors and command console.cmd
+00-2  Light Windows colors and command console.cmd
+01  Start Menu and Taskbar - replace pinned layout.cmd
+02  Apply basic set of Windows settings.cmd
+03  Install prefered browser (folder with web links).cmd
+04  Install devices drivers and software (from folder).cmd
+05  Adjust Power and Sensor features as for Desktop PC.cmd
+06  Install runtime libraries for apps (from folder).cmd
+07  Change location of User folders (open their properties).cmd
+08  Copy user files backup to drive C (from folder).cmd
+09  Install custom fonts (from folder).cmd
+66  Windows Defender - disable pernamently.cmd
+99  Windows Defender - enable again.cmd
 
 

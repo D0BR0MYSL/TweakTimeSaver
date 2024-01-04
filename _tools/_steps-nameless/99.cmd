@@ -54,10 +54,7 @@ set datetime=
 call :PrintLineNum 33
 call :PrintLineNum 34
 call :PrintLineNum 35
-@echo.
 call :PrintLineNum 36
-call :PrintLineNum 37
-call :PrintLineNum 38
 @echo.
 @echo.
 if [%1]==[] pause >nul

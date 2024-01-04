@@ -13,7 +13,7 @@
 ```
 Placeholder for a video or animated gif
 ```
-
+[![blah blah](https://i.imgur.com/nQZrBbx.gif)](https://www.youtube.com)
 ### Requirements/Target
 
 - Windows 11 Pro
@@ -49,6 +49,8 @@ This software is free and open source. Please note that using any software (incl
 Third-party tools used by whole solution are included in this package for user convenience. All credits go to respective authors.
 
 [Backup Start Menu Layout](https://www.sordum.org/10997/backup-start-menu-layout-v1-6/)
+
+[Edge Group Policy Templates (Microsoft)](https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/316147c7-70b9-48a4-9528-fcd8c82ab47f/MicrosoftEdgePolicyTemplates.cab)
 
 [GeekDrop-Props](https://github.com/STaRDoGG/GeekDrop-Props)
 
