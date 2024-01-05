@@ -22,7 +22,7 @@ _\--Please wait until YouTube video will be published--_
 ### How to download and deploy
 
 - If you are not familiar with Github website yet, just hit the green "Code" button at the top right corner of this page and choose "Download ZIP" option. Then unpack downloaded .zip archive.
-- Please note that TwseakTimeSaver has not been tested at paths containing spaces, but should work. It's just better to not use spaces in folder names for command line scripts.
+- Please note that TweakTimeSaver has not been tested at paths containing spaces, but should work. It's just better to not use spaces in folder names for command line scripts.
 
 ### Tips on use
 
@@ -32,7 +32,7 @@ _\--Please wait until YouTube video will be published--_
 - When starting, a short summary message is shown and nothing will apply until You press a key twice. Restore Point is being created automatically before actions.
 - TweakTimeSaver has a seamlessly integrated mechanism for deployment of additional user settings and backups. It's optional, easy to use and being offered in very friendly way without distrubance.
 
-Thanks for reading! TweakTimeSaver helped me a lot. I hope that it will be useful for You too!
+Thanks for reading! TweakTimeSaver helped me a lot. I hope that it will be useful for You too.
 
 ## Multilanguage support:
 
