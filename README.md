@@ -10,7 +10,8 @@
 
 ## Using
 
-![](https://imgur.com/saPcnLr.gif)  
+[![IMAGE ALT TEXT HERE](https://github.com/D0BR0MYSL/Big-Gifs/blob/main/TweakTimeSaver_preview.gif)](https://www.youtube.com)
+
 _\--Please wait until YouTube video will be published--_
 
 ### Requirements/Target
