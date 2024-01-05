@@ -1,5 +1,7 @@
 # TweakTimeSaver
 
+## **Нажмите здесь, чтобы открыть описание на Русском языке**
+
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows11/10&color=blue&style=flat)  ![language](https://img.shields.io/static/v1?label=code&message=batchfile&color=orange&style=flat)
 
 ## Purpose
@@ -35,6 +37,8 @@ _\--Please wait until YouTube video will be published--_
 Thanks for reading! TweakTimeSaver helped me a lot. I hope that it will be useful for You too.
 
 ## Multilanguage support
+
+All Windows languages are supported to apply the settings, but messages are displayed using translation files available:
 
 - English
 - Russian
