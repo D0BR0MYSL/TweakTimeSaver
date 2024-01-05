@@ -10,7 +10,8 @@
 
 ## Using
 
-[![Please wait until YouTube video will be made](https://github.com/D0BR0MYSL/Big-Gifs/blob/main/TweakTimeSaver_preview.gif)](https://www.youtube.com)
+![](https://imgur.com/saPcnLr.gif)  
+_\--Please wait until YouTube video will be published--_
 
 ### Requirements/Target
 
