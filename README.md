@@ -6,7 +6,7 @@
 
 ## Purpose
 
-- Provides slightly better basic settings for Windows
+- Quickly provides slightly better basic settings for Windows. Faster than tweaking software.
 - Saves time after installing/resetting Windows
 - Made to be practically useful without any harm, and not for showing off in manner of "revolutionary best tweaks and nerdy bells"
 
