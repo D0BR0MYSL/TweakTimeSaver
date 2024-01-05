@@ -1,6 +1,6 @@
 # TweakTimeSaver
 
-## **Нажмите здесь, чтобы открыть описание на Русском языке**
+## [**Нажмите здесь, чтобы открыть описание на Русском языке**](https://github.com/D0BR0MYSL/TweakTimeSaver/blob/main/README.ru-RU.md)
 
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows11/10&color=blue&style=flat)  ![language](https://img.shields.io/static/v1?label=code&message=batchfile&color=orange&style=flat)
 
