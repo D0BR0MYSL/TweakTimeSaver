@@ -41,7 +41,7 @@ Thanks for reading! TweakTimeSaver helped me a lot. I hope that it will be usefu
 
 English file names and messages are being used if language file for current system is not present inside `_translations` subfolder.
 
-Adding languages Is very easy to add and expected to be driven by the community in any form of release. You are welcomed here, so just translate, fork and release whole thing as Yours, I don't mind.
+Adding languages Is a very easy process and expected to be driven by the community in any form of release. You are welcomed here, so just translate, fork and release whole thing as Yours, I don't mind.
 
 ## License
 
