@@ -1,6 +1,6 @@
 # TweakTimeSaver
 
-![Platform](https://img.shields.io/static/v1?label=platform&message=windows11/10&color=blue&style=flat)    ![language](https://img.shields.io/static/v1?label=language&message=batchfile&color=orange&style=flat)
+![Platform](https://img.shields.io/static/v1?label=platform&message=windows11/10&color=blue&style=flat)  ![language](https://img.shields.io/static/v1?label=code&message=batchfile&color=orange&style=flat)
 
 ## Purpose
 
@@ -34,7 +34,10 @@ _\--Please wait until YouTube video will be published--_
 
 Thanks for reading! TweakTimeSaver helped me a lot. I hope that it will be useful for You too.
 
-## Multilanguage support:
+## Multilanguage support
+
+- English
+- Russian
 
 English file names and messages are being used if language file for current system is not present inside `_translations` subfolder.
 
