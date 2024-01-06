@@ -21,8 +21,8 @@ ID (hex)	Locale Description					Short String
 0410		Italian - Italy						it-it
 0411		Japanese - Japan					ja
 0412		Korean (Extended Wansung) - Korea	ko
-0413		Dutch – The Netherlands				nl-nl
-0414		Norwegian - (Bokmål)				no-no
+0413		Dutch тАУ The Netherlands				nl-nl
+0414		Norwegian - (Bokm├еl)				no-no
 0415		Polish - Poland						pl
 0416		Portuguese - Brazil					pt-br
 0417		Raeto - Romance						rm
@@ -45,7 +45,7 @@ ID (hex)	Locale Description					Short String
 0429		Farsi - Iran						fa
 042A		Vietnamese - Vietnam				vi
 042B		Armenian							hy
-042C		Azeri – Latin						az-az
+042C		Azeri тАУ Latin						az-az
 042D		Basque: Spain						eu
 042E		Sorbian								sb
 042F		FYRO Macedonian						mk
@@ -65,7 +65,7 @@ ID (hex)	Locale Description					Short String
 043F		Kazakh
 0440		Kyrgyz - Kyrgyzstan
 0441		Swahili - Kenya						sw
-0443		Uzbek – Uzbekistan (Latin)			uz-uz
+0443		Uzbek тАУ Uzbekistan (Latin)			uz-uz
 0444		Tatar - Tatarstan					tt
 0446		Punjabi - India
 0447		Gujarati - India
@@ -87,18 +87,18 @@ ID (hex)	Locale Description					Short String
 080C		French - Belgium					fr-be
 0810		Italian - Switzerland				it-ch
 0813		Dutch - Belgium						nl-be
-0814		Norwegian – Norway (Nynorsk)		no-no
+0814		Norwegian тАУ Norway (Nynorsk)		no-no
 0816		Portuguese - Portugal				pt-pt
 0818		Romanian - Moldova					ro-mo
 0819		Russian - Moldova					ru-mo
-081A		Serbian – Serbia (Latin)			sr-sp
+081A		Serbian тАУ Serbia (Latin)			sr-sp
 081D		Swedish - Finland					sv-fi
 0820		Urdu - India
 0827		Classic Lithuanian - Lithuania
-082C		Azeri – Cyrillic					az-az
-083C		Gaelic – Ireland					gd-ie
-083E		Malay – Brunei Darussalam			ms-bn
-0843		Uzbek – Uzbekistan (Cyrillic)		uz-uz
+082C		Azeri тАУ Cyrillic					az-az
+083C		Gaelic тАУ Ireland					gd-ie
+083E		Malay тАУ Brunei Darussalam			ms-bn
+0843		Uzbek тАУ Uzbekistan (Cyrillic)		uz-uz
 0C01		Arabic - Egypt						ar-eg
 0C04		Chinese - Hong Kong S.A.R.			zh-hk
 0C07		German - Austria					de-at
@@ -113,7 +113,7 @@ ID (hex)	Locale Description					Short String
 100A		Spanish - Guatemala					es-gt
 100C		French - Switzerland				fr-ch
 1401		Arabic - Algeria					ar-dz
-1404		Chinese – Macau S.A.R (Traditional)	zh-mo
+1404		Chinese тАУ Macau S.A.R (Traditional)	zh-mo
 1407		German - Liechtenstein				de-li
 1409		English - New Zealand				en-nz
 140A		Spanish - Costa Rica				es-cr
@@ -129,7 +129,7 @@ ID (hex)	Locale Description					Short String
 2009		English - Jamaica					en-jm
 200A		Spanish - Venezuela					es-ve
 2401		Arabic - Yemen						ar-ye
-2409		English – Carribbean				en-cb
+2409		English тАУ Carribbean				en-cb
 240A		Spanish - Colombia					es-co
 2801		Arabic - Syria						ar-sy
 2809		English - Belize					en-bz
@@ -141,9 +141,9 @@ ID (hex)	Locale Description					Short String
 3009		English - Zimbabwe
 300A		Spanish - Ecuador					es-ec
 3401		Arabic - Kuwait						ar-kw
-3409		English – Phillippines				en-ph
+3409		English тАУ Phillippines				en-ph
 340A		Spanish - Chile						es-cl
-3801		Arabic – United Arab Emirates		ar-ae
+3801		Arabic тАУ United Arab Emirates		ar-ae
 380A		Spanish - Uruguay					es-uy
 3C01		Arabic - Bahrain					ar-bh
 3C0A		Spanish - Paraguay					es-py

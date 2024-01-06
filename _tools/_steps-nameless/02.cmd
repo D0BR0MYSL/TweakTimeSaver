@@ -928,16 +928,16 @@ if exist "C:\pro\_net\Upload-Imgur\imgurUp.exe" (
 	Reg.exe add "HKCU\Software\Classes\SystemFileAssociations\.png\shell\UploadOnImgur\command" /ve /t REG_SZ /d "\"C:\pro\_net\Upload-Imgur\imgurUp.exe\" \"%%1\"" /f >nul 2>&1
 
 	if UILanguage==0419 (
-		Reg.exe add "HKCR\SystemFileAssociations\.bmp\shell\UploadOnImgur" /ve /t REG_SZ /d "Çàãðóçèòü íà imgur" /f >nul 2>&1
-		Reg.exe add "HKCR\SystemFileAssociations\.gif\shell\UploadOnImgur" /ve /t REG_SZ /d "Çàãðóçèòü íà imgur" /f >nul 2>&1
-		Reg.exe add "HKCR\SystemFileAssociations\.jpeg\shell\UploadOnImgur" /ve /t REG_SZ /d "Çàãðóçèòü íà imgur" /f >nul 2>&1
-		Reg.exe add "HKCR\SystemFileAssociations\.jpg\shell\UploadOnImgur" /ve /t REG_SZ /d "Çàãðóçèòü íà imgur" /f >nul 2>&1
-		Reg.exe add "HKCR\SystemFileAssociations\.png\shell\UploadOnImgur" /ve /t REG_SZ /d "Çàãðóçèòü íà imgur" /f >nul 2>&1
-		Reg.exe add "HKCU\Software\Classes\SystemFileAssociations\.bmp\shell\UploadOnImgur" /ve /t REG_SZ /d "Çàãðóçèòü íà imgur" /f >nul 2>&1
-		Reg.exe add "HKCU\Software\Classes\SystemFileAssociations\.gif\shell\UploadOnImgur" /ve /t REG_SZ /d "Çàãðóçèòü íà imgur" /f >nul 2>&1
-		Reg.exe add "HKCU\Software\Classes\SystemFileAssociations\.jpeg\shell\UploadOnImgur" /ve /t REG_SZ /d "Çàãðóçèòü íà imgur" /f >nul 2>&1
-		Reg.exe add "HKCU\Software\Classes\SystemFileAssociations\.jpg\shell\UploadOnImgur" /ve /t REG_SZ /d "Çàãðóçèòü íà imgur" /f >nul 2>&1
-		Reg.exe add "HKCU\Software\Classes\SystemFileAssociations\.png\shell\UploadOnImgur" /ve /t REG_SZ /d "Çàãðóçèòü íà imgur" /f >nul 2>&1
+		Reg.exe add "HKCR\SystemFileAssociations\.bmp\shell\UploadOnImgur" /ve /t REG_SZ /d "Ð—Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð½Ð° imgur" /f >nul 2>&1
+		Reg.exe add "HKCR\SystemFileAssociations\.gif\shell\UploadOnImgur" /ve /t REG_SZ /d "Ð—Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð½Ð° imgur" /f >nul 2>&1
+		Reg.exe add "HKCR\SystemFileAssociations\.jpeg\shell\UploadOnImgur" /ve /t REG_SZ /d "Ð—Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð½Ð° imgur" /f >nul 2>&1
+		Reg.exe add "HKCR\SystemFileAssociations\.jpg\shell\UploadOnImgur" /ve /t REG_SZ /d "Ð—Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð½Ð° imgur" /f >nul 2>&1
+		Reg.exe add "HKCR\SystemFileAssociations\.png\shell\UploadOnImgur" /ve /t REG_SZ /d "Ð—Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð½Ð° imgur" /f >nul 2>&1
+		Reg.exe add "HKCU\Software\Classes\SystemFileAssociations\.bmp\shell\UploadOnImgur" /ve /t REG_SZ /d "Ð—Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð½Ð° imgur" /f >nul 2>&1
+		Reg.exe add "HKCU\Software\Classes\SystemFileAssociations\.gif\shell\UploadOnImgur" /ve /t REG_SZ /d "Ð—Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð½Ð° imgur" /f >nul 2>&1
+		Reg.exe add "HKCU\Software\Classes\SystemFileAssociations\.jpeg\shell\UploadOnImgur" /ve /t REG_SZ /d "Ð—Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð½Ð° imgur" /f >nul 2>&1
+		Reg.exe add "HKCU\Software\Classes\SystemFileAssociations\.jpg\shell\UploadOnImgur" /ve /t REG_SZ /d "Ð—Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð½Ð° imgur" /f >nul 2>&1
+		Reg.exe add "HKCU\Software\Classes\SystemFileAssociations\.png\shell\UploadOnImgur" /ve /t REG_SZ /d "Ð—Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð½Ð° imgur" /f >nul 2>&1
 	) else (
 		Reg.exe add "HKCR\SystemFileAssociations\.bmp\shell\UploadOnImgur" /ve /t REG_SZ /d "Upload on Imgur" /f >nul 2>&1
 		Reg.exe add "HKCR\SystemFileAssociations\.gif\shell\UploadOnImgur" /ve /t REG_SZ /d "Upload on Imgur" /f >nul 2>&1

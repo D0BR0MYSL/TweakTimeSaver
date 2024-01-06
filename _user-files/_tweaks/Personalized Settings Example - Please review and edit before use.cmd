@@ -279,9 +279,9 @@ rem remove sendTo default shortcuts
 del /f /q "%appdata%\Microsoft\Windows\SendTo\Compressed (zipped) Folder.ZFSendToTarget"
 del /f /q "%appdata%\Microsoft\Windows\SendTo\Desktop (create shortcut).DeskLink"
 del /f /q "%appdata%\Microsoft\Windows\SendTo\Mail Recipient.MAPIMail"
-del /f /q "%appdata%\Microsoft\Windows\SendTo\Передача файлов через Bluetooth.LNK"
+del /f /q "%appdata%\Microsoft\Windows\SendTo\РџРµСЂРµРґР°С‡Р° С„Р°Р№Р»РѕРІ С‡РµСЂРµР· Bluetooth.LNK"
 del /f /q "%appdata%\Microsoft\Windows\SendTo\Bluetooth device.LNK"
-del /f /q "%appdata%\Microsoft\Windows\SendTo\Документы.mydocs"
+del /f /q "%appdata%\Microsoft\Windows\SendTo\Р”РѕРєСѓРјРµРЅС‚С‹.mydocs"
 del /f /q "%appdata%\Microsoft\Windows\SendTo\Documents.mydocs"
 REM ;Custom screensaver anf its settings
 "..\..\_tools\_apps\PowerRun\PowerRun.exe" reg.exe add "HKU\%usersid%\Control Panel\Desktop" /v "ScreenSaveActive" /t REG_SZ /d "1" /f
