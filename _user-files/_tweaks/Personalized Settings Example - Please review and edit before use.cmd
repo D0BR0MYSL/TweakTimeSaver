@@ -35,9 +35,46 @@ for /f "delims=" %%i in ('wmic useraccount get name^,sid ^| findstr /vi "SID"') 
 set username=%buffer:~0,18%
 set username=%username: =%
 
-rem copy Edge settings file having some defaults for convenience
-xcopy "..\..\_user-files\_apps\_browsers\Edge-new-default-settings\Preferences" "C:\Users\%username%\AppData\Local\Microsoft\Edge\User Data\Default\" /S/E/F/Y
-xcopy "..\..\_user-files\_apps\_browsers\Edge-new-default-settings\Preferences" "C:\Users\%username%\AppData\Local\Microsoft\Edge\User Data\Profile 1\" /S/E/F/Y
+rem desktop PC - disable sensor services
+reg query "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SensorService"
+if %errorlevel%==0 (
+	"..\..\_tools\_apps\PowerRun\PowerRun.exe" sc.exe config SensorService start= disabled
+	"..\..\_tools\_apps\PowerRun\PowerRun.exe" sc.exe stop SensorService
+)
+reg query "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SensrSvc"
+if %errorlevel%==0 (
+	"..\..\_tools\_apps\PowerRun\PowerRun.exe" sc.exe config SensrSvc start= disabled
+	"..\..\_tools\_apps\PowerRun\PowerRun.exe" sc.exe stop SensrSvc
+)
+
+rem Disable ink services
+reg add "HKEY_USERS\%usersid%\Software\Microsoft\TabletTip\1.7" /v "EnableInkingWithTouch" /t REG_DWORD /d 00000000 /f >nul 2>&1
+rem Disable Windows Ink Workspace
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsInkWorkspace" /v "AllowWindowsInkWorkspace" /t REG_DWORD /d 00000000 /f >nul 2>&1
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsInkWorkspace" /v "AllowSuggestedAppsInWindowsInkWorkspace" /t REG_DWORD /d 00000000 /f >nul 2>&1
+
+rem Disabling Text input settings
+reg add "HKU\%usersid%\Software\Microsoft\TabletTip\1.7" /v "EnableAutocorrection" /t REG_DWORD /d "0" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\TabletTip\1.7" /v "EnableSpellchecking" /t REG_DWORD /d "0" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\input\Settings" /v "InsightsEnabled" /t REG_DWORD /d "0" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\IME\15.0\IMEJP\Dictionaries" /v "MemoryLearning" /t REG_DWORD /d "0" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\IME\15.0\IMEJP\MSIME" /v "AutoCorrect" /t REG_DWORD /d "268632863" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\IME\15.0\IMEJP\MSIME" /v "EnableDocFeed" /t REG_DWORD /d "0" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\IME\15.0\IMEJP\MSIME" /v "ShiftDeOn" /t REG_DWORD /d "0" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\IME\15.0\IMEJP\MSIME" /v "shiftmode" /t REG_DWORD /d "0" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\IME\15.0\IMEJP\StyleList\ATOK" /v "DisableFunctions" /t REG_DWORD /d "3" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\IME\15.0\IMEJP\StyleList\MS-IME2000" /v "DisableFunctions" /t REG_DWORD /d "2" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\IME\15.0\IMEJP\StyleList\NATURAL" /v "DisableFunctions" /t REG_DWORD /d "0" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\IME\15.0\IMEJP\StyleList\VJE" /v "DisableFunctions" /t REG_DWORD /d "3" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\IME\15.0\IMEJP\StyleList\WX" /v "DisableFunctions" /t REG_DWORD /d "3" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\InputPersonalization\TrainedDataStore" /v "HarvestContacts" /t REG_DWORD /d "0" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\InputPersonalization" /v "RestrictImplicitInkCollection" /t REG_DWORD /d "1" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\InputPersonalization" /v "RestrictImplicitTextCollection" /t REG_DWORD /d "1" /f >nul 2>&1
+reg add "HKU\%usersid%\Software\Microsoft\Windows\CurrentVersion\CPSS\Store\InkingAndTypingPersonalization" /v "Value" /t REG_DWORD /d "0" /f >nul 2>&1
+reg add "HKCU\Software\Microsoft\InputPersonalization" /v "RestrictImplicitInkCollection" /t REG_DWORD /d "1" /f >nul 2>&1
+reg add "HKCU\Software\Microsoft\InputPersonalization" /v "RestrictImplicitTextCollection" /t REG_DWORD /d "1" /f >nul 2>&1
+reg add "HKCU\Software\Microsoft\InputPersonalization\TrainedDataStore" /v "HarvestContacts" /t REG_DWORD /d "0" /f >nul 2>&1
+reg add "HKCU\Software\Microsoft\Personalization\Settings" /v "AcceptedPrivacyPolicy" /t REG_DWORD /d "0" /f >nul 2>&1
 
 rem Disable Work folders (comrporative netweork fearure)
 dism /online /NoRestart /Disable-Feature /FeatureName:WorkFolders-Client >nul 2>&1
