@@ -74,14 +74,14 @@ Number of settings will apply:
 
 
 //Disable laptop and tablet functionality
-After pressing any key, these features will be disabled:
-- Disable Ink input services;
-- Disable Sensor services;
+After pressing any key, these features will be changed:
 - Hibernation file will maintain only Quick Reboot functionality;
 - Balanced Power scheme:
     * never sleep automatically,
     * turn the screen off after 2 hours of inactivity,
     * disable wake timers during Sleep.
+
+
 //Start menu and Taskbar - unpin all icons and pin only useful
 After pressing any key, settings will be applied in two steps:
 Step 1. Remove system buttons from Taskbar: Search, Task View, Copilot.
