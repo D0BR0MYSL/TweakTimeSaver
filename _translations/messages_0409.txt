@@ -1,5 +1,5 @@
 //codepade of this document is: UTF-8
-TweakTimeSaver v1.0.0
+TweakTimeSaver v1.0.1
 //common messages
 Getting system info. Please wait...
 ATTENTION: You should run this file as an Administrator.

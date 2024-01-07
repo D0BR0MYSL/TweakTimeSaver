@@ -1,5 +1,5 @@
 //codepade of this document is: 1251 (Russian)
-TweakTimeSaver v1.0.0
+TweakTimeSaver v1.0.1
 //common messages
 Получение сведений о системе. Пожалуйста, подождите...
 ВНИМАНИЕ: следует запустить этот файл от имени Администратора.
